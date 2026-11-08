@@ -67,6 +67,4 @@ For a block nested-loop example, state the outer and inner relation and use `B(o
 
 The plan also covers selection pushdown, projection/duplicate elimination, sorting, cardinality/selectivity estimates, memory limits and access paths through the four operator analyses and real plans. If a course-specific algorithm is not exposed by MySQL, explain it with a worked page-I/O model and identify the actual operator shown by MySQL instead. Engine estimates, measured rows/times and theoretical costs must be labelled separately.
 
-## Submission
 
-One Group 3 member submits the repository URL, the exact final published commit hash and the video. If private, instructor and TA access must be confirmed. The assignment's formula gives 11 minutes for three members while its numerical example says eight; a video below eight minutes satisfies both. The local recording script targets about 7:30, but only the measured exported file establishes its length. Video scripts and team preparation stay outside the repository.
