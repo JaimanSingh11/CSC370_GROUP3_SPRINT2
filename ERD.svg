@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1930" viewBox="0 0 1320 1930">
+<rect width="100%" height="100%" fill="#f4f7fb"/>
+<style>text{font-family:ui-monospace,monospace;fill:#172a42} .title{font-family:Arial;font-weight:bold}</style>
+<text x="28" y="36" font-size="25" class="title">Co-op Application Tracker · Complete relational ERD</text>
+<text x="28" y="62" font-size="14">Every attribute shown · PK primary key · FK foreign key · ? nullable · relationship cardinalities below</text>
+<g id="entity-Student">
+<rect x="24" y="88" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="38" y="118" font-size="19" class="title">Student</text>
+<text x="38" y="148" font-size="13">student_id PK </text>
+<text x="38" y="173" font-size="13">full_name </text>
+<text x="38" y="198" font-size="13">username </text>
+<text x="38" y="223" font-size="13">email ?</text>
+<text x="38" y="248" font-size="13">program ?</text>
+<text x="38" y="489" font-size="11">Keys: student_id; username</text>
+</g>
+<g id="entity-Employer">
+<rect x="456" y="88" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="470" y="118" font-size="19" class="title">Employer</text>
+<text x="470" y="148" font-size="13">employer_id PK </text>
+<text x="470" y="173" font-size="13">employer_name </text>
+<text x="470" y="198" font-size="13">industry ?</text>
+<text x="470" y="223" font-size="13">website ?</text>
+<text x="470" y="248" font-size="13">city ?</text>
+<text x="470" y="273" font-size="13">province ?</text>
+<text x="470" y="298" font-size="13">country ?</text>
+<text x="470" y="489" font-size="11">Keys: employer_id</text>
+</g>
+<g id="entity-JobPosting">
+<rect x="888" y="88" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="902" y="118" font-size="19" class="title">JobPosting</text>
+<text x="902" y="148" font-size="13">posting_id PK </text>
+<text x="902" y="173" font-size="13">employer_id FK </text>
+<text x="902" y="198" font-size="13">job_title </text>
+<text x="902" y="223" font-size="13">work_term </text>
+<text x="902" y="248" font-size="13">location_type </text>
+<text x="902" y="273" font-size="13">city ?</text>
+<text x="902" y="298" font-size="13">province ?</text>
+<text x="902" y="323" font-size="13">country ?</text>
+<text x="902" y="348" font-size="13">posting_url ?</text>
+<text x="902" y="373" font-size="13">date_posted ?</text>
+<text x="902" y="398" font-size="13">application_deadline ?</text>
+<text x="902" y="423" font-size="13">salary_range ?</text>
+<text x="902" y="448" font-size="13">posting_status </text>
+<text x="902" y="489" font-size="11">Keys: posting_id</text>
+</g>
+<g id="entity-ApplicationStatus">
+<rect x="24" y="538" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="38" y="568" font-size="19" class="title">ApplicationStatus</text>
+<text x="38" y="598" font-size="13">status_id PK </text>
+<text x="38" y="623" font-size="13">status_name </text>
+<text x="38" y="648" font-size="13">is_terminal </text>
+<text x="38" y="939" font-size="11">Keys: status_id; status_name</text>
+</g>
+<g id="entity-ResumeVersion">
+<rect x="456" y="538" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="470" y="568" font-size="19" class="title">ResumeVersion</text>
+<text x="470" y="598" font-size="13">resume_id PK </text>
+<text x="470" y="623" font-size="13">student_id FK </text>
+<text x="470" y="648" font-size="13">resume_label </text>
+<text x="470" y="673" font-size="13">version_number </text>
+<text x="470" y="698" font-size="13">created_on </text>
+<text x="470" y="723" font-size="13">file_name ?</text>
+<text x="470" y="939" font-size="11">Keys: resume_id; student_id + version_number</text>
+</g>
+<g id="entity-Application">
+<rect x="888" y="538" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="902" y="568" font-size="19" class="title">Application</text>
+<text x="902" y="598" font-size="13">application_id PK </text>
+<text x="902" y="623" font-size="13">student_id FK </text>
+<text x="902" y="648" font-size="13">posting_id FK </text>
+<text x="902" y="673" font-size="13">status_id FK </text>
+<text x="902" y="698" font-size="13">date_applied ?</text>
+<text x="902" y="723" font-size="13">source ?</text>
+<text x="902" y="748" font-size="13">priority </text>
+<text x="902" y="773" font-size="13">notes ?</text>
+<text x="902" y="939" font-size="11">Keys: application_id; student_id + posting_id</text>
+</g>
+<g id="entity-Interview">
+<rect x="24" y="988" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="38" y="1018" font-size="19" class="title">Interview</text>
+<text x="38" y="1048" font-size="13">interview_id PK </text>
+<text x="38" y="1073" font-size="13">application_id FK </text>
+<text x="38" y="1098" font-size="13">interview_round </text>
+<text x="38" y="1123" font-size="13">interview_type </text>
+<text x="38" y="1148" font-size="13">scheduled_at </text>
+<text x="38" y="1173" font-size="13">location ?</text>
+<text x="38" y="1198" font-size="13">interviewer_name ?</text>
+<text x="38" y="1223" font-size="13">result </text>
+<text x="38" y="1389" font-size="11">Keys: interview_id; application_id + interview_round</text>
+</g>
+<g id="entity-Offer">
+<rect x="456" y="988" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="470" y="1018" font-size="19" class="title">Offer</text>
+<text x="470" y="1048" font-size="13">offer_id PK </text>
+<text x="470" y="1073" font-size="13">application_id FK </text>
+<text x="470" y="1098" font-size="13">hourly_wage ?</text>
+<text x="470" y="1123" font-size="13">offer_date </text>
+<text x="470" y="1148" font-size="13">response_deadline ?</text>
+<text x="470" y="1173" font-size="13">offer_status </text>
+<text x="470" y="1198" font-size="13">notes ?</text>
+<text x="470" y="1389" font-size="11">Keys: offer_id; application_id</text>
+</g>
+<g id="entity-ApplicationResume">
+<rect x="888" y="988" width="408" height="424" rx="10" fill="white" stroke="#bccbdb"/>
+<text x="902" y="1018" font-size="19" class="title">ApplicationResume</text>
+<text x="902" y="1048" font-size="13">application_id PK FK </text>
+<text x="902" y="1073" font-size="13">resume_id FK </text>
+<text x="902" y="1389" font-size="11">Keys: application_id</text>
+</g>
+<text x="28" y="1450" font-size="20" class="title">Relationship graph · each child references exactly one parent</text>
+<text x="28" y="1475" font-size="13">1 at parent end; 0..* or 0..1 at child end. Attributes for each node appear above.</text>
+<line x1="1130.0" y1="1564.0" x2="1130.0" y2="1656.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="1130.0" y="1571.8" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="1130.0" y="1604.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">posts</text>
+<text x="1130.0" y="1636.2" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="150.0" y1="1564.0" x2="150.0" y2="1656.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="150.0" y="1571.8" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="150.0" y="1604.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">owns</text>
+<text x="150.0" y="1636.2" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="234.0" y1="1564.0" x2="556.0" y2="1656.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="282.3" y="1571.8" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="395.0" y="1604.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">submits</text>
+<text x="507.7" y="1636.2" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="1018.0" y1="1680.0" x2="752.0" y2="1680.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="978.1" y="1674.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="885.0" y="1674.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">receives</text>
+<text x="791.9" y="1674.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="640.0" y1="1564.0" x2="640.0" y2="1656.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="640.0" y="1571.8" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="640.0" y="1604.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">classifies</text>
+<text x="640.0" y="1636.2" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="640.0" y1="1704.0" x2="640.0" y2="1846.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="640.0" y="1719.3" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="640.0" y="1769.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">has</text>
+<text x="640.0" y="1818.7" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<line x1="701.8947368421053" y1="1704.0" x2="1068.1052631578948" y2="1846.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="756.8263157894737" y="1719.3" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="885.0" y="1769.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">receives</text>
+<text x="1013.1736842105263" y="1818.7" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..1</text>
+<line x1="578.1052631578947" y1="1704.0" x2="211.89473684210526" y2="1846.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="523.1736842105263" y="1719.3" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="395.0" y="1769.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">selects</text>
+<text x="266.82631578947365" y="1818.7" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..1</text>
+<line x1="150.0" y1="1704.0" x2="150.0" y2="1846.0" stroke="#4b6d93" stroke-width="2"/>
+<text x="150.0" y="1719.3" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">1</text>
+<text x="150.0" y="1769.0" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">used_by</text>
+<text x="150.0" y="1818.7" text-anchor="middle" font-size="12" style="paint-order:stroke;stroke:#f4f7fb;stroke-width:5;stroke-linejoin:round">0..*</text>
+<rect x="38" y="1516" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="150" y="1545" text-anchor="middle" font-size="15" class="title">Student</text>
+<rect x="528" y="1516" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="640" y="1545" text-anchor="middle" font-size="15" class="title">ApplicationStatus</text>
+<rect x="1018" y="1516" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="1130" y="1545" text-anchor="middle" font-size="15" class="title">Employer</text>
+<rect x="38" y="1656" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="150" y="1685" text-anchor="middle" font-size="15" class="title">ResumeVersion</text>
+<rect x="528" y="1656" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="640" y="1685" text-anchor="middle" font-size="15" class="title">Application</text>
+<rect x="1018" y="1656" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="1130" y="1685" text-anchor="middle" font-size="15" class="title">JobPosting</text>
+<rect x="38" y="1846" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="150" y="1875" text-anchor="middle" font-size="15" class="title">ApplicationResume</text>
+<rect x="528" y="1846" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="640" y="1875" text-anchor="middle" font-size="15" class="title">Interview</text>
+<rect x="1018" y="1846" width="224" height="48" rx="7" fill="white" stroke="#7795b5"/>
+<text x="1130" y="1875" text-anchor="middle" font-size="15" class="title">Offer</text>
+</svg>

@@ -1,0 +1,20 @@
+# Project execution evidence
+
+## Sprint 2
+
+Current execution results, clean-copy regression and header-labelled advanced report outputs are indexed in [Sprint 2 evidence](sprint2/README.md). The runnable verifier is `scripts/verify_sprint2.py`.
+
+## Sprint 1 recorded results
+
+Run date: 2026-10-18, America/Vancouver. Environment: macOS arm64, MySQL Community Server 8.4.8. Verification used an isolated server with networking disabled; existing application databases were not altered. Test data is synthetic. Video and publication are separate submission steps.
+
+- `mysql-verification.txt`: 56 passing checks, including explicit InnoDB under a MyISAM session default, schema load and all live columns, fixture cardinalities, seven reports compared with independent expected rows, valid workflow, rollback, and expected rejected writes. Negative checks require specific MySQL error codes.
+- `design-verification.txt`: nine relations checked for candidate keys, minimal FD bases and BCNF under declared assumptions; ERD coverage, projected FD and lossless-intersection checks.
+- `theory-examples.txt`: 12 passing worked-example checks for minimal bases, complete FD projection, losslessness/preservation, 3NF versus BCNF, lost dependency enforcement, a full 3NF synthesis with key augmentation, formal MVD rules, and a 4NF decomposition.
+- `migration-verification.txt`: 15 passing checks on the archived kick-off schema, ownership/engine preflight rejection and preservation of all original assignments.
+- `conceptual-erd-verification.txt`: Chen descriptive-attribute coverage and mapping of all SQL FK columns through relationships.
+- `demo-output.tsv`: actual output from the seven supplied report queries on the same successful test database. Upcoming interviews use 2026-10-18 as a fixed demonstration date.
+
+The verification tools are included in `scripts/`, and the migration implementation is in `migrations/`. These logs record the completed development runs. See the root README for the commands to rerun the checks or reproduce the SQL reports.
+
+The 4NF discussion is a domain/MVD argument, not an automated FD test result. Course mappings and technical limits are recorded in SPRINT_PLAN.md. Recording, recipient access and Brightspace upload are separate submission actions.
