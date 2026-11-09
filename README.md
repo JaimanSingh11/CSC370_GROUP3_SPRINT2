@@ -17,8 +17,6 @@ Group 3: Amrinder Singh, Jaiman Singh, Aashna Sadeque. We worked together on the
 
 This MySQL database tracks students' co-op applications, job postings, resume selections, interview rounds and offers. Sprint 1 added normalized resume selection, stronger integrity rules and complete diagrams. Sprint 2 adds advanced SQL reports, two views and a transaction without changing the base schema. All demonstration data is synthetic.
 
-Course submission details are in the [course guide](docs/COURSE_SUBMISSION_GUIDE.md).
-
 ## Design and evidence
 
 | Topic | Files |
